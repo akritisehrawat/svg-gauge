@@ -1,4 +1,3 @@
-/* global window, define, module */
 (function(global, factory) {
   var Gauge = factory(global);
   if(typeof define === "function" && define.amd) {
@@ -23,7 +22,6 @@
           return setTimeout(cb, 1000 / 60);
         });
 
-  // EXPERIMENTAL!!
   /**
    * Simplistic animation function for animating the gauge. That's all!
    * Options are:
@@ -209,7 +207,6 @@
           instance;
 
       if(startAngle < endAngle) {
-        console.log("WARN! startAngle < endAngle, Swapping");
         var tmp = startAngle;
         startAngle = endAngle;
         endAngle = tmp;
@@ -243,7 +240,7 @@
           "class": valueDialClass,
           fill: "none",
           stroke: "#666",
-          "stroke-width": 2.5,
+          "stroke-width": 15,
           d: pathString(radius, startAngle, startAngle) // value of 0
         });
 
@@ -255,7 +252,7 @@
               "class": dialClass,
               fill: "none",
               stroke: "#eee",
-              "stroke-width": 2,
+              "stroke-width": 15,
               d: pathString(radius, startAngle, endAngle, flag)
             }),
             gaugeValueElem,
